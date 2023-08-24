@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme App</title>
+</head>
+
+<body onload="onInit()">
+  <h1>Meme Generator</h1>
+    <section class="gallery">
+    </section>
+
+    <div class="part2">
+
+        <section class="editor" style="display: none;">
+
+            <button class="backGallery" onclick="goBack()"  ">Back Gallery ←</button>
+            <input type="text" id="my-text" placeholder="enter text... " style="display: none; font-size: 50px;"
+                oninput="changeText()">
+            <label for="fontSelector" " >Select a Font:</label>
+            <select id="fontSelector" onchange="changeFamilyFont()">
+                <option value="Arial">Arial</option>
+                <option value="David">David</option>
+                <option value="Aharoni">Aharoni</option>
+                <option value="Georiga">Georiga</option>
+                <option value="Alef">Alef</option>
+                <option value="Impact">Impact</option>
+                <option value="Dancing Script">Dancing Script</option>
+
+                <input type="color" id="textColorPicker" value="#000000" oninput="handleColorInput(this.value)">
+                <button class="increaseFontSizeBtn" onclick="onIncreaseFontSize()" ">➕</button>
+                <button class="decreaseFontSizeBtn" onclick="onDecreaseFontSize()" >➖</button>
+                <button clsss="save" onclick="save()"">Save</button>
+
+            </select>
+        </section>
+
+        <canvas id="my-canvas" width="1000" height="1000">
+        </canvas>
+    </div>
+
+
+</body>
+
+<script src="js/services/utilService.js"></script>
+<script src="js/services/memeService.js"></script>
+<script src="js/memeController.js"></script>
+
+</html>
